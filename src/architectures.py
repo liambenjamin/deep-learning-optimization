@@ -20,9 +20,6 @@ from tensorflow import keras
 import tensorflow_probability as tfp
 from tensorflow.keras import backend as K
 
-
-
-
 class BasicRecurrentLayer(tf.keras.layers.Layer):
     """Basic RNN Layer Class
     
@@ -129,7 +126,7 @@ class TiltedRecurrentLayer(tf.keras.layers.Layer):
 class InverseRecurrentLayer(tf.keras.layers.Layer):
     """Inverse RNN Layer class
 
-    Args:
+    args:
         1. units (int): recurrent dimension 
         2. ft_dim (int): input feature dimension 
         3. time_horizon (int): length of task time horizon 
@@ -168,15 +165,12 @@ class InverseRecurrentLayer(tf.keras.layers.Layer):
         ct=1
 
         for i in range(0,N):
-            
             h = K.dot(input_seq[i], self.R)
-
             if i % self.invert_index == 0:
                 ct = ct*-1
                 W = self.W if ct > 0 else W_inv
     
             z = h + K.dot(state, W) + self.bias
-
             state = self.activation(z)
             states.append(state)
 
@@ -186,7 +180,7 @@ class InverseRecurrentLayer(tf.keras.layers.Layer):
 class AntisymmetricRecurrentLayer(tf.keras.layers.Layer):
     """Antisymmetric Recurrent Layer class
     
-    Args:
+    args:
         1. units (int): recurrent dimension 
         2. ft_dim (int): input feature dimension 
         3. epsilon (float): discretization step size (euler method)
@@ -236,7 +230,7 @@ class AntisymmetricRecurrentLayer(tf.keras.layers.Layer):
 class LSTMRecurrentLayer(tf.keras.layers.Layer):
     """LSTM Recurrent Layer
     
-    Args:
+    args:
         1. hid_dim: recurrent dimension
     """
     def __init__(self, hid_dim):
@@ -279,7 +273,7 @@ class LSTMRecurrentLayer(tf.keras.layers.Layer):
 class GRURecurrentLayer(tf.keras.layers.Layer):
     """GRU Recurrent Layer
     
-    Args:
+    args:
         1. hid_dim: recurrent dimension
     """
     def __init__(self, hid_dim):
@@ -315,11 +309,11 @@ class GRURecurrentLayer(tf.keras.layers.Layer):
 class TemporalAttentionLayer(tf.keras.layers.Layer):
     """Temporal input attention layer class (simple attention mechanism)
 
-    Args:
+    args:
         1. units: attention dimension
         2. T: time horizon
 
-    Returns: context vector
+    returns: context vector
     """ 
     def __init__(self, units, T):
         super(TemporalAttentionLayer,self).__init__()
@@ -344,7 +338,7 @@ class TemporalAttentionLayer(tf.keras.layers.Layer):
 class ExponentialRecurrentLayer(tf.keras.layers.Layer):
     """Exponential RNN class
     
-    Args:
+    args:
         1. units (int): recurrent dimension
     """
 
@@ -461,7 +455,7 @@ class modrelu(tf.keras.layers.Layer):
 class LipschitzRecurrentLayer(tf.keras.layers.Layer):
     """Lipschitz RNN Class
     
-    Args:
+    args:
         1. units (int): recurrent dimension
         2-6. beta -> sigma: architecture specific parameters
     """
@@ -521,7 +515,7 @@ class LipschitzRecurrentLayer(tf.keras.layers.Layer):
 class UnICORNNRecurrentLayer(tf.keras.layers.Layer):
     """ UniCORNN Class (assumes fixed layer depth=2)
     
-    Args:
+    args:
         1. units (int): recurrent dimension
         2. ft_dim (float): feature dimension
         3. epsilon: architecture specific parameter
@@ -597,10 +591,10 @@ class UnICORNNRecurrentLayer(tf.keras.layers.Layer):
 def mod_tanh(inputs):
     """Activation acting on time scale parameter (i.e. c_i)
         Used in UnICORNN architecture
-    Args:
+    args:
         1. inputs (tensor)
 
-    Returns:
+    returns:
         1. Activated inputs
     """
     return 0.5 + 0.5 * tf.keras.activations.tanh(inputs/2)

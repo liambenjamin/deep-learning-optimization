@@ -7,16 +7,15 @@ from tensorflow.keras import backend as K
 class CoadjointModel(tf.keras.Model):
     """Coadjoint Model Class
 
-    Args:
+    args:
         1. model_name (string):    Recurrent layer name (e.g., "rnn", "lstm", "gru")
         2. optimizer (tf.keras.optimizer):     Optimizer used during training
         3. loss_fn (tf.keras.losses object):   Loss function
         4. adj_penalty:            adjoint regularizer function (import "adjoint_regularizers.py")
         5. lc_weights (list of 2): [weight applied to objective F, weight applied to objective G]
 
-    Returns: Coadjoint model
+    returns: coadjoint model class
        
-    
     """
     def compile(self, model_name, optimizer, loss_fn, adj_penalty, lc_weights):
         """compile coadjoint model"""
@@ -57,11 +56,9 @@ class CoadjointModel(tf.keras.Model):
                 with tf.GradientTape(persistent=True) as t1:
                     outputs = self(x, training=True)
                     L = self.loss_fn(y, outputs[0])
-                    
                 dL_dW = t1.gradient(L, self.trainable_variables)
                 dL_dX = t1.gradient(L, outputs[1])
                 G = self.adj_penalty(dL_dX)
-
             dG_dW = t2.gradient(G, self.trainable_variables)
             
             del t1
@@ -74,7 +71,6 @@ class CoadjointModel(tf.keras.Model):
             self.optimizer.apply_gradients(zip(dL_plus_G_dW, self.trainable_variables))
 
         else: #perform adjoint update (backpropagation)
-            
             with tf.GradientTape(persistent=True) as t1:
                 outputs = self(x, training=True)
                 L = self.loss_fn(y, outputs[0])
