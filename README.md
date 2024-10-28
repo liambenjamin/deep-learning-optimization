@@ -21,7 +21,7 @@ where $W\in\mathbb{R}^{d\times d}$, $R\in\mathbb{R}^{d\times p}$, $V\in\mathbb{R
 
 ### Empirical Risk Minimization Problem (Backpropagation Optimization)
 
-For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j) : j=1,\dots,N\\}, the ERM training problem is to solve:
+For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j) : j=1,\dots,N\\}$, the ERM training problem is to solve:
 
 ```math
 \begin{equation}
