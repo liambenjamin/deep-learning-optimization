@@ -2,10 +2,7 @@
 
 A repository for training recurrent neural networks (RNNs) using either: (i) backpropagation, or (ii) penalized backpropagation.
 
-### Problem Set Up
-
-
-
+## Problem Set Up
 
 **Definitition (Recurrent Neural Network):** For inputs $\\{u_1,\dots,u_T\\}\subset\mathbb{R}^p$, arbitrary initial state $x_0\in\mathbb{R}^d$, an activation function $\sigma: \mathbb{R}^d\rightarrow\mathbb{R}^d$, and an output function $\phi: \mathbb{R}^l\rightarrow\mathbb{R}^l$, a \emph{Recurrent Neural Network} (RNN) is defined by
 ```math
@@ -49,5 +46,9 @@ For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}
 	\end{aligned}
 \end{equation}
 ```
-
-where $\phi^{(1)}$ and $\sigma^{(1)}$ (applied component-wise) represent the derivatives of $\phi$ and $\sigma$, respectively.
+where $\phi^{(1)}$ and $\sigma^{(1)}$ (applied component-wise) represent the derivatives of $\phi$ and $\sigma$, respectively; and $G(\{\lambda_t\})$ is a twice differentiable function of the (backward) adjoint states. For example,
+```math
+\begin{equation}
+	G(\{\lambda_t\}) = \frac{1}{T}\sum_{i=1}^{T}||\lambda_i||_2^2 - \frac{1}{T}\bigg{(}\frac{1}{T}\sum_{j=1}^{T}||\lambda_j||_2^2\bigg{)}
+\end{equation}
+```
