@@ -41,11 +41,11 @@ For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}
 ```math
 \begin{equation}
 	\begin{aligned}
-		\arg\max_{W,R,b_1,V,b_o}&\quad \sum_{j=1}^{N}L(\hat{y}^j,y^j) + G(\{\lambda_t\}) \\
+		\arg\max_{W,R,b_1,V,b_o}&\quad \sum_{j=1}^{N}L(\hat{y}^j,y^j) \\%+ G(\{\lambda_t\}) \\
 		s.t.\quad  &x_i = \sigma(Wx_{i-1} + Ru_i + b_1), \quad i=1,\dots,T \\
-		\quad &\hat{y}= \phi(Vx_T + b_o) \\
-		\quad &\lambda_T = -V'\phi^{(1)}(Vx_T+b_o)'\frac{\partial L}{\partial\hat{y}} \\
-		\quad &\lambda_i = W'\sigma^{(1)}(Wx_i+Ru_{i+1}+b_1)'\lambda_{i+1}\quad i<T,
+		\quad &\hat{y}= \phi(Vx_T + b_o)
+		%\quad &\lambda_T = -V'\phi^{(1)}(Vx_T+b_o)'\frac{\partial L}{\partial\hat{y}} \\
+		%\quad &\lambda_i = W'\sigma^{(1)}(Wx_i+Ru_{i+1}+b_1)'\lambda_{i+1}\quad i<T,
 	\end{aligned}
 \end{equation}
 ```
