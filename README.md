@@ -2,7 +2,7 @@
 
 A repository for training recurrent neural networks (RNNs) using either: (i) backpropagation, or (ii) penalized backpropagation.
 
-#### File Descriptions
+### File Descriptions
 
 - `src/adjoint_regularizers.py` 
 	- adjoint penalty functions, $G(\{\lambda_t\})$
@@ -28,7 +28,7 @@ A repository for training recurrent neural networks (RNNs) using either: (i) bac
 where $W\in\mathbb{R}^{d\times d}$, $R\in\mathbb{R}^{d\times p}$, $V\in\mathbb{R}^{l\times d}$ and $b_o\in\mathbb{R}^l$.
 
 
-##### [Backpropagation] Empirical Risk Minimization Problem
+#### [Backpropagation] Empirical Risk Minimization Problem
 
 For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}$, the ERM training problem is to solve:
 
@@ -43,7 +43,7 @@ For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}
 ```
 
 
-##### [Penalized Backpropagation] Regularized Empirical Risk Minimization Problem 
+#### [Penalized Backpropagation] Regularized Empirical Risk Minimization Problem 
 
 For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}$, the regularized ERM training problem is to solve:
 
