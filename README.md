@@ -49,6 +49,6 @@ For a set of examples, $\\{(u_1^j, u_2^j,\dots,u_T^j, y^j)\ :\  j=1,\dots,N\ \\}
 where $\phi^{(1)}$ and $\sigma^{(1)}$ (applied component-wise) represent the derivatives of $\phi$ and $\sigma$, respectively; and $G(\{\lambda_t\})$ is a twice differentiable function of the (backward) adjoint states. For example,
 ```math
 \begin{equation}
-	G(\{\lambda_t\}) = \frac{1}{T}\sum_{i=1}^{T}||\lambda_i||_2^2 - \frac{1}{T}\bigg{(}\frac{1}{T}\sum_{j=1}^{T}||\lambda_j||_2^2\bigg{)}
+	G(\{\lambda_t\}) = \frac{1}{T}\sum_{i=1}^{T}||\lambda_i||_2^2 - \bigg{(}\frac{1}{T}\sum_{j=1}^{T}||\lambda_j||_2\bigg{)}^2
 \end{equation}
 ```
