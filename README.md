@@ -2,13 +2,10 @@
 
 A repository for training recurrent neural networks (RNNs) using either: (i) backpropagation, or (ii) penalized backpropagation.
 
-\begin{itemize}
-	\item `src/adjoint_regularizers.py` \\
-	\item `src/architectures.py` \\
-	\item `src/coadjoint.py` \\
-	\item `src/dependencies.py`
-\end{itemize}
-	
+- `src/adjoint_regularizers.py` 
+- `src/architectures.py` 
+- `src/coadjoint.py` 
+- `src/dependencies.py`
 	
 
 ## Problem Set Up
