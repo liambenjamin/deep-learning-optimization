@@ -3,9 +3,13 @@
 A repository for training recurrent neural networks (RNNs) using either: (i) backpropagation, or (ii) penalized backpropagation.
 
 - `src/adjoint_regularizers.py` 
+	- adjoint penalty functions, $G(\{\lambda_t\})$
 - `src/architectures.py` 
+	- class implementations for a variety of recurrent neural network architectures
 - `src/coadjoint.py` 
+	- class implementation of penalized backpropagation model
 - `src/dependencies.py`
+	- additional helper functions
 	
 
 ## Problem Set Up
