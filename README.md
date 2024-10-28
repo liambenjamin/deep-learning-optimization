@@ -16,7 +16,7 @@ A repository for training recurrent neural networks (RNNs) using either: (i) bac
 
 ### General Problem Set Up
 
-**Definitition (Recurrent Neural Network):** For inputs $\\{u_1,\dots,u_T\\}\subset\mathbb{R}^p$, arbitrary initial state $x_0\in\mathbb{R}^d$, an activation function $\sigma: \mathbb{R}^d\rightarrow\mathbb{R}^d$, and an output function $\phi: \mathbb{R}^l\rightarrow\mathbb{R}^l$, a \emph{Recurrent Neural Network} (RNN) is defined by
+**Definitition (Recurrent Neural Network):** For inputs $\\{u_1,\dots,u_T\\}\subset\mathbb{R}^p$, arbitrary initial state $x_0\in\mathbb{R}^d$, an activation function $\sigma: \mathbb{R}^d\rightarrow\mathbb{R}^d$, and an output function $\phi: \mathbb{R}^l\rightarrow\mathbb{R}^l$, a *Recurrent Neural Network* (RNN) is defined by
 ```math
 \begin{equation}
 	\begin{aligned}
